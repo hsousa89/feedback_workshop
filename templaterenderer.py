@@ -5,7 +5,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 
 
 def render_template(
-    template_path: str, context: dict[str, Any], module: str = "templates"
+    template_path: str, context: dict[str, Any], module: str = "templates", **kwargs
 ) -> str:
     """
     Renders a Jinja2 template with the provided student data and returns the rendered output as a string.
@@ -26,4 +26,4 @@ def render_template(
 
     hour = datetime.now().hour
     context["hour"] = hour
-    return template.render(**context)
+    return template.render(**context, **kwargs)
