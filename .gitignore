@@ -1,4 +1,4 @@
 /.vscode
 /helloworld.py
 /venv
-__pycache__/customcsvreader.cpython-311.pyc
+*.pyc
