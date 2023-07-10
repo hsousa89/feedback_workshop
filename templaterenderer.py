@@ -4,7 +4,9 @@ from typing import Any
 from jinja2 import Environment, PackageLoader, select_autoescape
 
 
-def render_template(module: str, template_path: str, context: dict[str, Any]) -> str:
+def render_template(
+    template_path: str, context: dict[str, Any], module: str = "templates"
+) -> str:
     """
     Renders a Jinja2 template with the provided student data and returns the rendered output as a string.
 
@@ -23,4 +25,5 @@ def render_template(module: str, template_path: str, context: dict[str, Any]) ->
         return f"Template not found.\n{E}"
 
     hour = datetime.now().hour
-    return template.render(hour=hour, **context)
+    context["hour"] = hour
+    return template.render(**context)
