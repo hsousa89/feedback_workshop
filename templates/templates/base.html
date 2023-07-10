@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- djlint:off H017,H021, H025,H030,H031 -->
+<html lang="en">
+    <!-- djlint:on -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}
+            {% endblock title %}
+        </title>
+        {% block styles %}
+            <style>
+                    .messageBlock{
+                        display: block;
+                        font-size: 11pt;
+                        line-height: 1.7rem;
+                    }
+                    ol > li {
+                        padding: 0.7rem;
+                    }
+                    ol > li {
+                        font-size: 12pt;
+                        color: rgb(31, 73, 125);
+                    }
+                    ol > li > span.liText{
+                        font-size: 11pt;
+                        line-height: 1.2rem;
+                        color: rgb(0,0,0);
+                    }
+                    .languageFlag{
+                        float: right
+                    }
+                    .finalMark{
+                        font-size: 14pt;
+                        font-weight: bolder;
+                        color: rgb(47, 48, 48);
+                    }
+                    .ending{
+                        padding-bottom: 1rem;
+                    }
+                    .signOff{
+                        font-size: 14pt;
+                        font-family: "Monotype Corsiva";
+                        color: rgb(31, 73, 125);
+                    }
+                    .schoolLettering{
+                        font-size: 10pt;
+                        font-family: "Trebuchet MS, sans-serif";
+                        color: rgb(31, 73, 125);
+                    }
+                    .schoolURL{
+                        font-size: 10pt;
+                        font-family: "Trebuchet MS, sans-serif";
+                        font-weight:bolder;
+                        color: rgb(17, 85, 204);
+                    }
+
+                    .py-1 {
+                        padding-top: .4rem;
+                        padding-bottom: .4rem;
+                    }
+
+                    .py-2 {
+                        padding-top: calc(.4rem * 2);
+                        padding-bottom: calc(.4rem * 2);
+                    }
+
+                    .py-3 {
+                        padding-top: calc(.4rem * 3);
+                        padding-bottom: calc(.4rem * 3);
+                    }
+
+                    .py-4 {
+                        padding-top: calc(.4rem * 4);
+                        padding-bottom: calc(.4rem * 4);
+                    }
+
+                    .py-5 {
+                        padding-top: calc(.4rem * 5);
+                        padding-bottom: calc(.4rem * 5);
+                    }
+            </style>
+        {% endblock styles %}
+    </head>
+    <body>
+        <div class="messageBlock">
+            {% block saudacao %}
+                {% include "saudacao.html" %}
+            {% endblock saudacao %}
+            {% block mensagem %}
+            {% endblock mensagem %}
+            {% block despedida %}
+                {% include "despedida.html" %}
+            {% endblock despedida %}
+        </div>
+    </body>
+</html>
